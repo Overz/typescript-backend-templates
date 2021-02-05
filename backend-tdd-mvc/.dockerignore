@@ -1,0 +1,12 @@
+.commitlintrc.js
+.eslintrc.js
+.gitignore
+.git
+azure-pipelines.yaml
+jest.config.ts
+build
+dist
+coverage
+LICENSE
+Dockerfile*
+README.md
