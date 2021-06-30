@@ -1,16 +1,16 @@
 {
   "type": "mysql",
-  "host": "mysql://root:password@mysql-srv:3306/tcc",
+  "host": "mysql-srv",
   "port": 3306,
   "username": "admin",
   "password": "admin",
-  "database": "tcc",
+  "database": "mydatabase",
   "synchronize": false,
   "logging": false,
-  "entities": ["src/models/*ts"],
-  "migrations": ["src/migrations/*.ts"],
+  "entities": ["src/models/*.js"],
+  "migrations": ["src/migrations/cli/*.js"],
   "cli": {
     "entitiesDir": "src/models",
-    "migrationsDir": "src/migrations"
+    "migrationsDir": "src/migrations/cli"
   }
 }

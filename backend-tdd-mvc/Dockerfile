@@ -15,4 +15,4 @@ RUN npm run build \
     && rm -rf .npmrc \
     && rm -rf package-lock.json
 
-CMD ["npm", "start"]
+CMD [ "npm", "start" ]

@@ -1,6 +1,8 @@
 .commitlintrc.js
 .eslintrc.js
+.eslintignore
 .gitignore
+.huskyrc.json
 .git
 azure-pipelines.yaml
 jest.config.ts

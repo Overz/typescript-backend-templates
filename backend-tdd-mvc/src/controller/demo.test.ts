@@ -11,8 +11,8 @@ it('deve cadastrar', async () => {
   expect(demo.length).toEqual(1);
 
   const res = await request(app).post('/api/demo').send({
-    nmNome: 'nome',
-    deDescricao: 'descricao',
+    nome: 'nome',
+    descricao: 'descricao',
   });
 
   demo = await demoRepository.find();

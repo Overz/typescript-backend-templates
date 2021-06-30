@@ -10,7 +10,7 @@ export const connect = async (options: ConnectionOptions) => {
     logging: false,
     synchronize: false,
     migrationsTableName: 'unused_migrations',
-    entities: [`${__dirname}/*.ts`],
+    entities: [Demo],
     ...options,
   });
 
