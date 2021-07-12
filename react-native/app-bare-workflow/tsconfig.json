@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["*"]
+    }
+  },
+  "exclude": ["node_modules", "*.config.js", "*.config.ts", ".*.js", "*.md"],
+  "include": ["./src/**/*"],
+  "extends": "expo/tsconfig.base"
+}
