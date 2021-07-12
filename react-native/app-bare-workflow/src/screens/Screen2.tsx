@@ -11,13 +11,7 @@ export const Screen2: React.FC = () => {
   return (
     <Container>
       <Text>Tela 2</Text>
-      <Button
-        title="Tela 1"
-        onPress={() => {
-          navigation.goBack();
-          // throw new Error('Deu ruim');
-        }}
-      />
+      <Button title="Tela 1" onPress={() => navigation.goBack()} />
       <Button title="Trocar Tema" onPress={() => changeTheme()} />
     </Container>
   );

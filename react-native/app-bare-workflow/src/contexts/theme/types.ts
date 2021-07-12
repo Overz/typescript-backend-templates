@@ -2,8 +2,6 @@ import { DefaultTheme, ThemeOptions } from 'styled-components';
 
 export interface CustomThemeContextData {
   theme: ThemeOptions;
-  // schema: DefaultTheme['colors'];
-  // setSchema: (schema: DefaultTheme['colors']) => void;
   changeTheme: () => void;
   defaultTheme: () => void;
 }
