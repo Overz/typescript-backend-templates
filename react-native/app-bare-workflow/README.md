@@ -30,7 +30,7 @@ Para utilizar, precisa de um arquivo `.env` com alguma environment dentro,
 e um arquivo de definição de tipos [react-native-dotenv.d.ts](./src/@types/react-native-dotenv.d.ts) para utilizar corretamente como mostrado abaixo:
 
 ```ts
-import { API_URL } from 'react-native-dotenv';
+import { API_URL } from '@env';
 ```
 
 ## Eslint
