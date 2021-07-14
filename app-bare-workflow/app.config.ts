@@ -1,6 +1,12 @@
 import { ConfigContext, ExpoConfig } from '@expo/config';
 
-export default (config: ConfigContext): ExpoConfig => ({
+interface Config extends ExpoConfig {
+  android: {
+    jsEngine: string;
+  } & ExpoConfig['android'];
+}
+
+export default (config: ConfigContext): Config => ({
   name: 'app',
   slug: 'app',
   version: '1.0.0',
@@ -16,6 +22,7 @@ export default (config: ConfigContext): ExpoConfig => ({
     backgroundColor: '#fff',
   },
   android: {
+    jsEngine: 'hermes',
     package: 'com.overz.appnavigation',
     adaptiveIcon: {
       foregroundImage: './assets/icon.png',

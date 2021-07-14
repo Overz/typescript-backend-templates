@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>EXUpdatesSDKVersion</key>
-    <string>41.0.0</string>
+    <string>42.0.0</string>
     <key>EXUpdatesURL</key>
     <string>https://exp.host/@overz/app</string>
     <key>EXUpdatesEnabled</key>
@@ -12,5 +12,7 @@
     <string>ALWAYS</string>
     <key>EXUpdatesLaunchWaitMs</key>
     <integer>0</integer>
+    <key>EXUpdatesReleaseChannel</key>
+    <string>default</string>
   </dict>
 </plist>
