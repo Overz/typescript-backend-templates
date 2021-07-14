@@ -27,6 +27,7 @@ module.exports = {
     'arrow-body-style': 'warn',
     'no-plusplus': 'off',
     'react/prop-types': 'off',
+    'react/display-name': 'off',
     curly: [1, 'all'],
     complexity: [1, 10],
     'max-lines': ['error', 350],

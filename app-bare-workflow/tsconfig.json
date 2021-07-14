@@ -18,6 +18,6 @@
     }
   },
   "exclude": ["node_modules", "*.config.js", "*.config.ts", ".*.js", "*.md"],
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./assets"],
   "extends": "expo/tsconfig.base"
 }

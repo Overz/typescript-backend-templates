@@ -1,15 +1,14 @@
-import { View as DefaultView, Text as DefaultText } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
-export const Container = styled(DefaultView)`
+export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: #fff;
 `;
 
-export const Text = styled(DefaultText)`
+export const Text = styled.Text`
   font-weight: bold;
   font-size: 20;
-  color: ${({ theme }) => theme.colors.text};
+  color: #000;
 `;

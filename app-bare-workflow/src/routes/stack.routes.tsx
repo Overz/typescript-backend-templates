@@ -36,7 +36,7 @@ const spec: TransitionSpec = {
   },
 };
 
-export const TestNavigation: React.FC = () => (
+export const StackNavigation: React.FC = () => (
   <Navigator
     initialRouteName={Routes.TELA_1}
     screenOptions={{

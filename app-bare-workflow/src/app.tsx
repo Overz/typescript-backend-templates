@@ -1,6 +1,6 @@
 import React from 'react';
-import { StatusBar, View as DefaultView } from 'react-native';
-import styled, { ThemeProvider } from 'styled-components';
+import { StatusBar } from 'react-native';
+import styled, { ThemeProvider } from 'styled-components/native';
 import { dark, light } from '~/contexts';
 import { useCustomThemeSelector } from './hooks';
 import { AppearanceProvider } from 'react-native-appearance';
@@ -46,7 +46,7 @@ export const App: React.FC = () => {
  * como mencionado neste link:
  * https://stackoverflow.com/questions/59900898/white-background-flashing-when-switching-screens-react-navigation-v5
  */
-const Wrapper = styled(DefaultView)`
+const Wrapper = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
