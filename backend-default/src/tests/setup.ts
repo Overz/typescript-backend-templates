@@ -1,5 +1,5 @@
 import { Connection } from 'typeorm';
-import { getApp } from '../app';
+import { server } from '../app';
 import { connect } from '../models';
 import { constants } from '../utils';
 
@@ -10,7 +10,7 @@ beforeAll(async () => {
   constants();
 
   db = await connect({ type: 'sqlite', database: ':memory:' });
-  getApp();
+  server();
 });
 
 beforeEach(async () => {

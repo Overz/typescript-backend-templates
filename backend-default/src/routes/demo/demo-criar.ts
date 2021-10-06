@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { body } from 'express-validator';
+import { demoRepository, PK_DEMO_SIZE, Status } from '../../models';
 import { nanoid } from 'nanoid';
-import { demoRepository, PK_DEMO_SIZE } from '~/models';
 
 const router = Router();
 
@@ -19,6 +19,7 @@ router.post(
     const demo = await demoRepository.save({
       cdDemo: nanoid(PK_DEMO_SIZE),
       deDescricao: descricao,
+      flStatus: Status.ATIVO,
     });
 
     res.status(201).send(demo);

@@ -1,7 +1,7 @@
 import httpMocks from 'node-mocks-http';
-import { StatusUsuario } from '../models';
+import { Status } from '../models';
 
-import { createToken } from '../utils/tokens/jwt-sign';
+import { createToken } from '../utils/jwt/jwt-sign';
 import { currentUser } from './current-user';
 
 const testJwtSecret = 'secret';
@@ -32,7 +32,7 @@ it('deve retornar usuário vazio se o cookie for inválido', () => {
 
 it('deve retornar usuário vazio se o cookie estiver expirado', () => {
   const token = createToken(
-    { id: '1', email: 'test@test.com', activated: StatusUsuario.ATIVO },
+    { id: '1', email: 'test@test.com', activated: Status.ATIVO },
     testJwtSecret,
     { notBefore: '1h' }
   );
@@ -50,7 +50,7 @@ it('deve retornar usuário vazio se o cookie estiver expirado', () => {
 
 it('deve retornar usuário se o cookie for válido', () => {
   const token = createToken(
-    { id: '1', email: 'test@test.com', activated: StatusUsuario.ATIVO },
+    { id: '1', email: 'test@test.com', activated: Status.ATIVO },
     testJwtSecret
   );
 
@@ -68,7 +68,7 @@ it('deve retornar usuário se o cookie for válido', () => {
 
 it('deve verificar o header "Authorization" da requisição caso o cookies "jwt" não exista', () => {
   const token = createToken(
-    { id: '1', email: 'test1@test.com', activated: StatusUsuario.ATIVO },
+    { id: '1', email: 'test1@test.com', activated: Status.ATIVO },
     testJwtSecret
   );
 

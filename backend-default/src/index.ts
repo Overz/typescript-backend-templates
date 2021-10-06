@@ -1,17 +1,14 @@
 import { Connection } from 'typeorm';
-import { get } from 'env-var';
 import { connect, migrate } from './models';
-import { app, init } from './app';
+import { app, server } from './app';
 import { config } from 'dotenv';
 import { resolve } from 'path';
-import { DB_URL, constants } from './utils';
+import { DB_URL, constants, PORT } from './utils';
 
 let db: Connection;
 
 const start = async () => {
   config({ path: resolve(__dirname, '..', '.env') });
-
-  const PORT = get('PORT').default(3000).asPortNumber();
 
   try {
     console.log('[ENVIRONMENT] Getting environments...');
@@ -26,7 +23,6 @@ const start = async () => {
     db = await connect({
       type: 'postgres',
       url: DB_URL,
-      migrationsTableName: 'migrations',
     });
 
     await migrate(db, `${__dirname}/migrations`);
@@ -35,7 +31,7 @@ const start = async () => {
   }
 
   try {
-    init();
+    server();
 
     // inicia o servidor http
     app.listen(PORT, () => {
@@ -57,6 +53,7 @@ const finish = async () => {
   process.exit();
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const exit = (msg: string, err: any) => {
   console.error(msg, '\n', err);
   process.exit(1);

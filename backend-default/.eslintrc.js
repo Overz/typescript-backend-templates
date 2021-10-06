@@ -1,14 +1,9 @@
 module.exports = {
   env: {
-    es2021: true,
+    es6: true,
     node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'prettier',
-    'plugin:@typescript-eslint/eslint-recommended',
-    '@plugin:typescript-eslint/recomended',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',

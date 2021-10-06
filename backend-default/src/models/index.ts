@@ -16,7 +16,7 @@ export const connect = async (opts: ConnectionOptions) => {
   const db = await createConnection({
     logging: false,
     synchronize: false,
-    entities: [Demo],
+    entities: [`${__dirname}/*.ts`],
     ...opts,
   });
 

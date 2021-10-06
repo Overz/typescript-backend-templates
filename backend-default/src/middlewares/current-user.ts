@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { UserPayload } from '../utils/tokens/jwt-sign';
+import { UserPayload } from '../utils/jwt/jwt-sign';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -24,25 +24,22 @@ declare global {
  *
  * @param jwtSecret A chave secreta para decodificar o token JWT
  */
-export const currentUser = (jwtSecret: string) => (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  if (!req.cookies['jwt'] && !req.headers.authorization) {
-    return next();
-  }
+export const currentUser =
+  (jwtSecret: string) => (req: Request, res: Response, next: NextFunction) => {
+    if (!req.cookies['jwt'] && !req.headers.authorization) {
+      return next();
+    }
 
-  try {
-    const payload = jwt.verify(
-      req.cookies['jwt'] || req.headers.authorization,
-      jwtSecret
-    ) as UserPayload;
+    try {
+      const payload = jwt.verify(
+        req.cookies['jwt'] || req.headers.authorization,
+        jwtSecret
+      ) as UserPayload;
 
-    req.currentUser = payload;
-  } catch (err) {
-    // nao fazer nada; só significa que não está logado
-  }
+      req.currentUser = payload;
+    } catch (err) {
+      // nao fazer nada; só significa que não está logado
+    }
 
-  next();
-};
+    next();
+  };

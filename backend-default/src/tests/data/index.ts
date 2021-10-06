@@ -1,5 +1,13 @@
 import { demoData } from './demoData';
 
-export const useData = async (name: string) => {
-  name.includes('demo') && (await demoData());
+type Data = 'demo';
+
+export const useData = async (...data: Data[]) => {
+  for (const d of data) {
+    switch (d) {
+      case 'demo':
+        await demoData();
+        break;
+    }
+  }
 };

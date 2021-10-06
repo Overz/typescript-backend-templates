@@ -1,6 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { body } from 'express-validator';
-import { demoRepository } from '~/models';
+import { demoRepository } from '../../models';
 
 const router = Router();
 

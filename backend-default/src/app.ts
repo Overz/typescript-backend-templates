@@ -10,7 +10,7 @@ import { routes } from './routes';
 
 let app: Express;
 
-const init = () => {
+const server = () => {
   app = express();
 
   // Configurations
@@ -21,14 +21,14 @@ const init = () => {
   app.use(urlencoded({ extended: true }));
 
   // Comunicação com o front
-  app.use(cors());
+  app.use(cors({ credentials: true, origin: '*' }));
 
   // Rotas a aplicação
   app.use('/api', routes);
 
   // Not Found
   app.all('*', async (req) => {
-    console.log('NOT FOUND: ', req.url);
+    console.log(`[APP] Request Not Found: ${req.method} - ${req.url}`);
     throw new NotFoundError();
   });
 
@@ -36,4 +36,4 @@ const init = () => {
   app.use(errorHandler);
 };
 
-export { app, init };
+export { app, server };

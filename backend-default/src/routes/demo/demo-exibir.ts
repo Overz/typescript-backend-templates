@@ -1,7 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { body } from 'express-validator';
-import { NotFoundError } from '~/errors/not-found-error';
-import { demoRepository } from '~/models';
+import { NotFoundError } from '../../errors';
+import { demoRepository } from '../../models';
 
 const router = Router();
 

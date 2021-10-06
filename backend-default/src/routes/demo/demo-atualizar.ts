@@ -1,7 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { body } from 'express-validator';
-import { BadRequestError } from '~/errors/bad-request-error';
-import { demoRepository } from '~/models';
+import { BadRequestError } from '../../errors';
+import { demoRepository } from '../../models';
 
 const router = Router();
 

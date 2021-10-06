@@ -1,5 +1,11 @@
 import { JWT_KEY, createToken } from '~/utils';
 
+interface UserData {
+  id?: string;
+  email?: string;
+  activated?: string;
+}
+
 /**
  * Retorna um valor de cookie que simula um login válido.
  * O valor retornado está pronto para ser usado diretamente, e
@@ -17,9 +23,3 @@ export const loginCookie = (userData?: UserData) => {
 
   return `jwt=${token}`;
 };
-
-interface UserData {
-  id?: string;
-  email?: string;
-  activated?: string;
-}

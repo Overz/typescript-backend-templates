@@ -1,7 +1,7 @@
 import mockHttp from 'node-mocks-http';
 
 import { NotAuthorizedError } from '../errors/not-authorized-error';
-import { StatusUsuario } from '../models';
+import { Status } from '../models';
 import { requireAuth } from './require-auth';
 
 it('deve lançar um erro se não houver usuário logado', () => {
@@ -23,7 +23,7 @@ it('deve continuar normalmente se houver usuário logado', () => {
   req.currentUser = {
     id: '1',
     email: 'test@test.com',
-    activated: StatusUsuario.ATIVO,
+    activated: Status.ATIVO,
   };
   requireAuth(req, res, next);
 
