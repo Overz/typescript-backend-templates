@@ -1,4 +1,4 @@
-import { demoRepository, Status } from '~/models';
+import { demoRepository, Status } from '../../models';
 
 export const demoData = async () => {
   await demoRepository.save({

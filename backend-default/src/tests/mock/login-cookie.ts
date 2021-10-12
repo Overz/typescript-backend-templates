@@ -1,4 +1,4 @@
-import { JWT_KEY, createToken } from '~/utils';
+import { JWT_KEY, createToken } from '../../utils';
 
 interface UserData {
   id?: string;

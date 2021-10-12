@@ -6,7 +6,7 @@ import { constants } from '../utils';
 export let db: Connection;
 
 beforeAll(async () => {
-  process.env.JWT_KEY = 'JWT_KEY';
+  setTestEnvs();
   constants();
 
   db = await connect({ type: 'sqlite', database: ':memory:' });
@@ -21,3 +21,7 @@ beforeEach(async () => {
 afterAll(async () => {
   await db.close();
 });
+
+const setTestEnvs = () => {
+  process.env.JWT_KEY = 'JWT_KEY';
+};

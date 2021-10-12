@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./build/*",
     "start": "node build/index.js",
+    "demo": "ts-node src/index.ts",
     "dev": "ts-node-dev src/index.ts --poll --transpile-only --ignore-watch node_modules",
     "build": "npm run clean && tsc -p tsconfig.prod.json --removeComments",
     "test": "jest",
@@ -21,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Overz/typescript-templates.git"
+    "url": "git+https://github.com/Overz/templates.git"
   },
-  "author": "",
+  "author": "Christian Lima",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Overz/typescript-templates/issues"
+    "url": "https://github.com/Overz/templates/issues"
   },
-  "homepage": "https://github.com/Overz/typescript-templates#readme",
+  "homepage": "https://github.com/Overz/templates/blob/master/README.md",
   "dependencies": {
     "axios": "0.22.0",
     "body-parser": "1.19.0",
@@ -45,7 +46,7 @@
     "pg": "8.7.1",
     "reflect-metadata": "0.1.13",
     "typeorm": "0.2.38",
-    "typescript": "^4.4.3",
+    "typescript": "4.4.3",
     "umzug": "2.3.0"
   },
   "devDependencies": {
@@ -73,6 +74,7 @@
     "sqlite3": "4.2.0",
     "supertest": "6.1.6",
     "ts-jest": "27.0.5",
+    "ts-node": "10.3.0",
     "ts-node-dev": "1.1.8"
   }
 }

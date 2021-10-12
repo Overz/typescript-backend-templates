@@ -1,0 +1,14 @@
+build
+coverage
+node_modules
+Dockerfile*
+jest*
+LICENSE
+
+.*
+*.md
+*.yml
+*.yaml
+.*.js
+
+!.npmrc
