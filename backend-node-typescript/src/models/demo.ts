@@ -20,7 +20,7 @@ export class Demo {
     type: 'text',
     nullable: false,
     enum: Status,
-    default: Status.INATIVO,
+    default: Status.ATIVO,
   })
   flStatus!: Status;
 }

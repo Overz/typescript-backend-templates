@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import { body } from 'express-validator';
 import { demoRepository, PK_DEMO_SIZE, Status } from '../../models';
 import { nanoid } from 'nanoid';
+import { validateRequest } from '../../middlewares';
 
 const router = Router();
 
@@ -13,6 +14,7 @@ router.post(
       .notEmpty()
       .withMessage('É necessário informar a descricao'),
   ],
+  validateRequest,
   async (req: Request, res: Response) => {
     const { descricao } = req.body;
 

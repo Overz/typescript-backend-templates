@@ -1,5 +1,4 @@
 # Templates para projetos em typescript
 
-- [Backend com TDD e MVC](./backend-tdd-mvc)
-- [Backend com TDD flexivel](./backend-default)
-- [React Native com Typescript](./react-native/app-bare-workflow)
+- [Typescript, TDD](./backend-node-typescript)
+- [RN, Typescript, Bareworkflow](./react-native/app-bare-workflow)
